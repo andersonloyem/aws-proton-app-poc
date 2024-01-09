@@ -1,8 +1,0 @@
-proton: ServiceSpec
-pipeline:
-  code_dir: lambda-task
-  unit_test_command: echo 'add your unit test command here'
-  packaging_command: zip function.zip get.py
-instances:
-  - name: apigw-lambda-svc-testing
-    environment: vpc-env-develop

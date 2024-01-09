@@ -1,0 +1,16 @@
+---
+proton: "ServiceSpec"
+pipeline:
+  code_dir: "lambda-ping-sns"
+  unit_test_command: "echo 'add your unit test command here'"
+  packaging_command: "zip function.zip app.py"
+instances:
+- name: "apigw-lambda-svc-developper"
+  environment: "vpc-env-develop"
+  spec:
+    lambda_handler: "app.lambda_handler"
+    lambda_memory: 512
+    lambda_timeout: 30
+    lambda_runtime: "python3.8"
+    subnet_type: "public"
+    code_uri: "s3://awsproton-pipeline-apigw-lambda-svc-functionbucket-6upqykdfbksj/3/function.zip"
