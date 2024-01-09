@@ -19,7 +19,7 @@ def lambda_handler(event, context):
         event_obj = {
             "functionName": context.function_name,
             "SNS_Message": f"Message {sns_message} sent at {date}",
-            "SNS_Subject": "New message from publisher"
+            "SNS_Subject": "New message from publisher v2"
         }
 
         # Params object for SNS
